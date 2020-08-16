@@ -1,0 +1,24 @@
+{
+  "FundCode": {
+    "CodeAttr": [
+      "161725",
+      "519674",
+      "008087",
+      "213001"
+    ],
+    "RobotCallbackUrl": [
+    ],
+    "Exponent": [
+      "s_sz399006",
+      "s_sz399001",
+      "s_sh000001"
+    ],
+    "Stock": [
+      "sh601006",
+      "sz002905",
+      "sz000002",
+      "sz300760"
+    ]
+  },
+  "Path": "./config.json"
+}
