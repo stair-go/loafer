@@ -5,7 +5,7 @@
 package main
 
 import (
-	"daydaytest/run"
+	"github.com/stair-go/loafer/run"
 )
 
 //v1

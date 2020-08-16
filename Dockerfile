@@ -1,12 +1,12 @@
 FROM golang:1.13
 
-WORKDIR /root/daydaytest
+WORKDIR /root/github.com/stair-go/loafer
 
 COPY . .
 RUN go build -mod=vendor
 
 WORKDIR /app
-#COPY --from=builder /root/daydaytest .
+#COPY --from=builder /root/github.com/stair-go/loafer .
 EXPOSE 8189
-ENTRYPOINT ["./daydaytest"]
+ENTRYPOINT ["./github.com/stair-go/loafer"]
 #CMD ["-mode=release"]

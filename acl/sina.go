@@ -5,8 +5,8 @@
 package acl
 
 import (
-	"daydaytest/share"
-	"daydaytest/util"
+	"github.com/stair-go/loafer/share"
+	"github.com/stair-go/loafer/util"
 	"fmt"
 	"io/ioutil"
 	"net/http"

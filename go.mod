@@ -1,4 +1,4 @@
-module daydaytest
+module github.com/stair-go/loafer
 
 go 1.13
 

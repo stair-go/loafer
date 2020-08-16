@@ -5,7 +5,7 @@
 package control
 
 import (
-	"daydaytest/server"
+	"github.com/stair-go/loafer/server"
 	"log"
 	"net/http"
 )

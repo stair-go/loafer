@@ -5,8 +5,8 @@
 package run
 
 import (
-	"daydaytest/control"
-	"daydaytest/server"
+	"github.com/stair-go/loafer/control"
+	"github.com/stair-go/loafer/server"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"

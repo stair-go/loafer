@@ -5,8 +5,8 @@
 package server
 
 import (
-	"daydaytest/acl"
-	"daydaytest/share"
+	"github.com/stair-go/loafer/acl"
+	"github.com/stair-go/loafer/share"
 )
 
 func SendFund(allFs []share.FundInfo) (err error) {

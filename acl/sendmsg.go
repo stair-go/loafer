@@ -6,7 +6,7 @@ package acl
 
 import (
 	"bytes"
-	"daydaytest/share"
+	"github.com/stair-go/loafer/share"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
