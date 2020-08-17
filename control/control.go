@@ -1,7 +1,3 @@
-/*
- * @author: Wu Zhihui
- * @date: 2020/8/16
- */
 package control
 
 import (
@@ -10,11 +6,11 @@ import (
 	"net/http"
 )
 
-func ControlInit(addr string)  {
+func ControlInit(addr string) {
 	http.HandleFunc("/", query)
-	http.HandleFunc("/add", add)
+	http.HandleFunc("/add/fund", add)
 	http.HandleFunc("/add/stock", addStock)
-	http.HandleFunc("/delete", delete)
+	http.HandleFunc("/delete/fund", delete)
 	http.HandleFunc("/delete/stock", deleteStock)
 	http.HandleFunc("/query", query)
 	log.Println("Starting v1 server ...")
@@ -24,7 +20,7 @@ func ControlInit(addr string)  {
 func add(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	getcode := query.Get("code")
-	if getcode!="" {
+	if getcode != "" {
 		server.AddFundCode(getcode)
 	}
 	allFund, err := server.QueryAllFund()
@@ -43,7 +39,7 @@ func add(w http.ResponseWriter, r *http.Request) {
 func addStock(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	getcode := query.Get("code")
-	if getcode!="" {
+	if getcode != "" {
 		server.AddStock(getcode)
 	}
 	allFund, err := server.QueryAllStock()
@@ -76,7 +72,6 @@ func delete(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("删除成功!"))
 }
 
-
 func deleteStock(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 	getcode := query.Get("code")
@@ -93,7 +88,6 @@ func deleteStock(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write([]byte("删除成功!"))
 }
-
 
 func query(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {

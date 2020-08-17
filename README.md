@@ -55,7 +55,7 @@ git clone https://github.com/stair-go/loafer.git
 
 ###### 添加基金代码
 
-- 路径: "ip:prot/add?code="
+- 路径: "ip:prot/add/fund?code="
 - 示例: 127.0.0.1:8189/add?code=213001
 
 ###### 添加股票代码
@@ -65,7 +65,7 @@ git clone https://github.com/stair-go/loafer.git
 
 ###### 删除基金代码
 
-- 路径: "ip:prot/delete/?code="
+- 路径: "ip:prot/delete/fund?code="
 - 示例: 127.0.0.1:8189/delete?code=213001
 
 ###### 删除股票代码
