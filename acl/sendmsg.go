@@ -15,7 +15,7 @@ import (
 	"strconv"
 )
 
-// 重写该接口,则可换取到发送,dd.微信....(现只实现了dd)
+// 只需重写该接口,则可换取到发送,dd.微信....(现只实现了dd),而不需要改动到业务(server层)
 type SendMessage interface {
 	// 发送基金
 	SendFund(allFs []share.FundInfo, robotCallbackUrl []string) (err error)

@@ -14,6 +14,14 @@ import (
 	"strings"
 )
 
+type Stock interface {
+	// 查询指数
+	QueryBroadMarket(code string) (exponentInfo share.ExponentInfo, err error)
+	// 查询股票
+	QueryStock(code string) (stockInfo share.StockInfo, err error)
+}
+
+
 // 查询指数
 func QueryBroadMarket(code string) (exponentInfo share.ExponentInfo, err error) {
 	res, err := http.Get("http://hq.sinajs.cn/list=" + code)
