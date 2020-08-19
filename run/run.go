@@ -44,6 +44,7 @@ func configInit(path string) error {
 
 func Polling() {
 	ticker := time.NewTicker(time.Minute * 30)
+	var err error
 	for {
 		select {
 		case <-ticker.C:
@@ -52,25 +53,32 @@ func Polling() {
 			}
 			allFund, err := server.QueryAllFund()
 			if err != nil {
-				fmt.Println("轮询出错:", err)
 				continue
 			}
 			err = server.SendFund(allFund)
 			if err != nil {
-				fmt.Println("轮询出错:", err)
 				continue
 			}
 
 			allExponent, err := server.QueryAllExponent()
 			if err != nil {
-				fmt.Println("轮询出错:", err)
 				continue
 			}
 			err = server.SendExponentInfo(allExponent)
 			if err != nil {
-				fmt.Println("轮询出错:", err)
 				continue
 			}
+			allStock, err := server.QueryAllStock()
+			if err != nil {
+				continue
+			}
+			err = server.SendStockInfo(allStock)
+			if err != nil {
+				continue
+			}
+		}
+		if err != nil {
+			fmt.Println("轮询出错:", err)
 		}
 	}
 }

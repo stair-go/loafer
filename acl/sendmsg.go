@@ -6,9 +6,9 @@ package acl
 
 import (
 	"bytes"
-	"github.com/stair-go/loafer/share"
 	"encoding/json"
 	"fmt"
+	"github.com/stair-go/loafer/share"
 	"io/ioutil"
 	"net/http"
 	"sort"
@@ -131,11 +131,11 @@ func SendStockInfo(allStock []share.StockInfo, robotCallbackUrl []string) (err e
 		return
 	}
 
-	for index, value := range robotCallbackUrl {
+	for _, value := range robotCallbackUrl {
 		// 暂时跳过1
-		if index == 0 {
-			continue
-		}
+		//if index == 0 {
+		//	continue
+		//}
 		resp, err := http.Post(value, "application/json;charset=UTF-8", bytes.NewReader(ddDate))
 		if resp != nil {
 			defer resp.Body.Close()
